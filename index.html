@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Madaha - Cyber Security Practitioner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 4rem 12% 4rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(white);
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .logo span {
+            text-shadow: 0 0 23px var(--main-color);
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .navbar a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+            text-decoration: none;
+
+            color: #ffffff; /* Set the text color to white */
+            text-decoration: none; /* Remove underline from links */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+        
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+        }
+
+        #menu-icon {
+            font-size: 3.6rem;
+            color: var(--main-color);
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1280px) {
+            .header {
+                padding: 14px 2%;
+            }
+            .navbar a {
+                margin-left: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            #menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                width: 270px;
+                background-color: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem 0;
+                border-radius: 10px;
+            }
+
+            .navbar.active {
+                display: flex;
+                right: 2%;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 1.5rem 0;
+                padding: 0 2rem;
+                font-size: 1.6rem;
+              color: #ffffff; /* Set the text color to white */
+              text-decoration: none; /* Remove underline from links */
+              transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">John<span> Madaha</span></a>
+        <i id="menu-icon" class='bx bx-menu'></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div id="neon-cursor"></div>
+
+    <script>
+        const menuIcon = document.querySelector('#menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+                navbar.classList.remove('active');
+            }
+        });
+    </script>
+
+   
+    
+    <script src="index.js"></script>
+
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, I'm <span>John</span></h1>
+      <h3 class="text-animation">I'm a <span></span></h3>
+      <p>
+        As a budding cybersecurity professional, I am passionate about using technology to safeguard individuals, 
+        organizations, and the planet from evolving digital threats. My journey into cybersecurity began with a deep desire 
+        to address real-world security challenges and contribute to a safer, more resilient, and inclusive digital future. 
+        While I am early in my career, I approach every challenge with enthusiasm, a commitment to excellence, 
+        and a constant drive for growth. My focus is on creating secure environments that protect data and foster trust in 
+        an increasingly connected world.
+      </p>
+      <p>
+        With a strong foundation in key programming languages such as Java, Python, HTML, CSS, and JavaScript, 
+        I am eager to apply my skills to cybersecurity projects that align with ethical values and promote secure, 
+        responsible technology use. I aim to collaborate with like-minded professionals who are passionate about 
+        protecting sensitive information, preventing cyber threats, and delivering exceptional quality in every solution. 
+        My goal is to contribute to the development of secure systems and technologies that safeguard both individuals and 
+        organizations in an increasingly digital world.
+      </p>
+      <div class="social-icons">
+        <a href="https://github.com/GiovanniJohnArthur"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/johnmadaha/"><i class='bx bxl-linkedin-square'></i></a>
+      </div>
+      <div class="btn-group">
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+    <div class="home-img">
+      <img src="Untitled design-4-2.png" alt="Profile Image">
+    </div>
+  </section>
+
+
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src=" Untitled design-4-2.png" alt="About Image">
+    </div>
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <p>Growing up, I was passionate about gaming, which sparked my curiosity and love for technology. 
+        This passion, along with my problem-solving skills, led me to pursue a career in cybersecurity. 
+        Along the way, I encountered doubts and challenges, but my determination and commitment to my goals kept me on track. 
+        Today, as a cybersecurity professional, I apply that same dedication to protecting systems and securing data in 
+        every project I work on. My journey has taught me that with hard work and perseverance, any security challenge 
+        can be overcome. I’m excited to continue growing in my career and contributing to impactful solutions that address 
+        real-world cybersecurity threats.</p>
+      <a href="https://drive.google.com/file/d/1b1hASR91TIOIlWzRSfex2Mfaare8VUg_/view" class="btn" target="_blank">Download My CV</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2 class="heading">Skills</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <div class="service-info">
+          <i class="bx bxl-figma"></i>
+          <h4>Cyber Security Practitioner </h4>
+          <p>
+            As a cybersecurity practitioner, I focus on creating secure, user-centered digital experiences that safeguard data and protect against evolving threats. I conduct security assessments, perform penetration testing, and design robust security architectures that ensure the integrity and confidentiality of systems. My work has strengthened security protocols, reduced vulnerabilities by a significant margin, and improved overall system resilience. By integrating best practices in cybersecurity, I help organizations minimize risks while maintaining seamless user experiences and operational efficiency.
+        </p>
+        
+        </div>
+      </div>
+      <div class="service-box">
+        <div class="service-info">
+          <i class="bx bx-code"></i>
+          <h4>Junior Innovator</h4>
+          <p>As a Junior Innovator in cybersecurity, I am skilled in transforming complex security challenges into innovative, scalable solutions that enhance system resilience and data protection. I leverage tools such as vulnerability scanners, firewalls, and encryption protocols to identify and mitigate risks, ensuring the robustness of network infrastructures. I collaborate closely with development and IT teams to implement security best practices across web and mobile platforms, safeguarding against threats while maintaining optimal performance. My focus on continuous improvement allows me to contribute to projects that align with organizational goals, ensuring secure and efficient digital environments. </p>
+        </div>
+      </div>
+      <div class="service-box">
+        <div class="service-info">
+          <i class="bx bx-code-curly"></i>
+          <h4>Data Analyst</h4>
+          <p>
+            As a data analyst in cybersecurity, I specialize in analyzing security data to identify trends and vulnerabilities using tools like Python and SQL. I work with large datasets, implementing event-driven security analytics to detect anomalies and potential breaches. My expertise includes building and maintaining secure databases with PostgreSQL and MongoDB, ensuring data integrity and compliance. I also leverage automation tools and frameworks to streamline security operations and enhance threat detection. Through data visualization and reporting, I help stakeholders make informed decisions to strengthen security measures.
+        </p>
+        
+          
+      </div>
+    </div>
+  </section>
+
+  <div class="app">
+    <header>
+      <div class="tech-container">
+      <h2>Tech Languages</h2>
+      <i class="fa-solid fa-code"></i>
+   </div>
+      <p> <a href="https://codepen.io/ykadosh/pen/KKezJzz"></a></p>
+    </header>
+    <div class="tag-list">
+      <div class="loop-slider" style="--duration:15951ms; --direction:normal;">
+        <div class="inner">
+          <div class="tag"><span>#</span> JavaScript</div>
+          <div class="tag"><span>#</span> CSS</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> Python</div>
+          <!-- duplicated content -->
+          <div class="tag"><span>#</span> JavaScript</div>
+          <div class="tag"><span>#</span> CSS</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> C</div>
+        </div>
+      </div>
+      <div class="loop-slider" style="--duration:19260ms; --direction:reverse;">
+        <div class="inner">
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> Java</div>
+          <div class="tag"><span>#</span> C</div>
+          <div class="tag"><span>#</span> C</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <!-- duplicated content -->
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> Java</div>
+          <div class="tag"><span>#</span> C</div>
+          <div class="tag"><span>#</span> C</div>
+          <div class="tag"><span>#</span> CSS</div>
+        </div>
+      </div>
+      <div class="loop-slider" style="--duration:10449ms; --direction:normal;">
+        <div class="inner">
+          <div class="tag"><span>#</span> Flask</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> React</div>
+          <div class="tag"><span>#</span> Java</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <!-- duplicated content -->
+          <div class="tag"><span>#</span> C</div>
+          <div class="tag"><span>#</span> Java</div>
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> HTML</div>
+        </div>
+      </div>
+      <div class="loop-slider" style="--duration:16638ms; --direction:reverse;">
+        <div class="inner">
+          <div class="tag"><span>#</span> JavaScript</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <div class="tag"><span>#</span> CSS</div>
+          <div class="tag"><span>#</span> React</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <!-- duplicated content -->
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> HTML</div>
+          <div class="tag"><span>#</span> CSS</div>
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> NC</div>
+        </div>
+      </div>
+      <div class="loop-slider" style="--duration:15936ms; --direction:normal;">
+        <div class="inner">
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> Flask</div>
+          <div class="tag"><span>#</span> Java</div>
+          <div class="tag"><span>#</span> CSS</div>
+          <!-- duplicated content -->
+          <div class="tag"><span>#</span> SQL</div>
+          <div class="tag"><span>#</span> React</div>
+          <div class="tag"><span>#</span> flask</div>
+          <div class="tag"><span>#</span> Python</div>
+          <div class="tag"><span>#</span> SQL</div>
+        </div>
+      </div>
+      <div class="fade"></div>
+    </div>
+  </div>
+
+  <style>
+    .contact {
+        padding: 6rem 2rem;
+        
+    }
+    
+    .contact .heading {
+        text-align: center;
+        font-size: 7.5rem;
+        margin-bottom: 3rem;
+        color: #2d2d2d;
+    }
+    
+    .contact .heading span {
+        color: #40dfff;
+    }
+    
+    .contact-form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .input-group {
+        margin-bottom: 1.5rem;
+        font-size: 14px;
+    }
+    
+    .input-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 14px; /* Adjust the size as needed */
+}
+
+    
+    .form-control {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e1e1e1;
+        border-radius: 8px;
+        font-size: 12rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #5fe4e8;
+        box-shadow: 0 0 0 3px rgba(64, 112, 244, 0.1);
+        outline: none;
+    }
+    
+    .form-control::placeholder {
+        color: #6c757d;
+        font-size: large;
+    }
+    
+    textarea.form-control {
+        resize: vertical;
+        min-height: 12px;
+    }
+    
+    .btn-submit {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #2ef8ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        font-weight: 600;
+    }
+    
+    .btn-submit:hover {
+        background: #15f3ff;
+        transform: translateY(-2px);
+    }
+    
+    .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #2d2d2d;
+        font-weight: 500;
+    }
+    
+    .contact-info {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e1e1e1;
+       
+    }
+    
+    .contact-info p {
+        color: #6c757d;
+        margin: 0.5rem 0;
+    }
+    
+    .contact-info i {
+        color: #21fffb;
+        margin-right: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .contact {
+            padding: 4rem 1rem;
+        }
+        
+        .contact-form {
+            padding: 1.5rem;
+        }
+    }
+    </style>
+    
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me</span></h2>
+      <form class="contact-form" 
+            action="https://formspree.io/f/xkgnngnz" 
+            method="POST" 
+            onsubmit="return validateForm(event)">
+          <!-- Hidden input for the thank you page redirect -->
+          <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+          
+          <div class="input-group">
+              <div class="input-box">
+                  <div>
+                      <label for="fullName" class="form-label">Full Name</label>
+                      <input type="text" id="fullName" name="fullName" class="form-control" 
+                             placeholder="Fullnames" 
+                             pattern="^[a-zA-Z\s]{2,50}$" 
+                             maxlength="50"
+                             required>
+                  </div>
+                  <div>
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" id="email" name="email" class="form-control" 
+                             placeholder="Email Address" 
+                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                             required>
+                  </div>
+              </div>
+              <div class="input-box">
+                  <div>
+                      <label for="phone" class="form-label">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" 
+                             placeholder="Cellnumber"
+                             pattern="^\+?[0-9]{10,15}$">
+                  </div>
+                  <div>
+                      <label for="subject" class="form-label">Subject</label>
+                      <input type="text" id="subject" name="subject" class="form-control" 
+                             placeholder="Subject"
+                             maxlength="100"
+                             required>
+                  </div>
+              </div>
+          </div>
+          <div class="input-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea name="message" id="message" class="form-control" 
+                        rows="6" 
+                        placeholder="Write your message here..." 
+                        maxlength="1000"
+                        required></textarea>
+          </div>
+          <div id="formStatus" class="alert" style="display: none;"></div>
+          <button type="submit" class="btn-submit">
+              Send Message
+          </button>
+      </form>
+  </section>
+  
+  <script>
+  function validateForm(event) {
+      const form = event.target;
+      const formStatus = document.getElementById('formStatus');
+      const submitButton = form.querySelector('button[type="submit"]');
+      
+      // Basic validation
+      const inputs = form.querySelectorAll('input, textarea');
+      for (let input of inputs) {
+          if (!input.validity.valid) {
+              formStatus.textContent = 'Please fill all required fields correctly.';
+              formStatus.className = 'alert alert-danger';
+              formStatus.style.display = 'block';
+              return false;
+          }
+      }
+      
+      // Disable submit button to prevent double submission
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      
+      // Show sending status
+      formStatus.textContent = 'Sending message...';
+      formStatus.className = 'alert alert-info';
+      formStatus.style.display = 'block';
+      
+      // The form will be handled by Formspree
+      return true;
+  }
+  
+  // Add client-side validation
+  document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.contact-form');
+      
+      form.addEventListener('input', function(e) {
+          const input = e.target;
+          if (input.validity.valid) {
+              input.classList.remove('invalid');
+          } else {
+              input.classList.add('invalid');
+          }
+      });
+  });
+  </script>
+  
+  <style>
+  .alert {
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+  }
+  
+  .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+  }
+  
+  .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+  }
+  
+  .alert-info {
+      background-color: #cce5ff;
+      color: #004085;
+      border: 1px solid #b8daff;
+  }
+  
+  .form-control.invalid {
+      border-color: #dc3545;
+  }
+  
+  /* Disable submit button styles */
+  .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+  }
+  </style>
+
+    
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p> &copy; 2024 John Madaha. All rights reserved.</p>
+  </footer>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <circle cx="12" cy="12" r="5" fill="yellow"></circle>
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+</button>
+
+
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const menuIcon = document.getElementById('menu-icon');
+  const navbar = document.querySelector('.navbar');
+
+  // Toggle mobile menu
+  menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('open'); // Toggle the 'open' class on the navbar
+  });
+
+  // Function to set the active link
+  const setActiveLink = (event) => {
+      const links = document.querySelectorAll('.navbar a');
+      links.forEach(link => {
+          link.classList.remove('active'); // Remove active class from all links
+      });
+      event.target.classList.add('active'); // Add active class to the clicked link
+  };
+
+  // Attach click event to each navbar link
+  const navbarLinks = document.querySelectorAll('.navbar a');
+  navbarLinks.forEach(link => {
+      link.addEventListener('click', setActiveLink);
+  });
+});
+</script>
+
+
+
+</body>
+
+</html>
